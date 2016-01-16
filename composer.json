@@ -1,0 +1,20 @@
+{
+    "name": "ale-blanco/SmsCounterLength",
+    "type": "library",
+    "description": "Libreria para calcular el numero de sms necesarios para enviar un texto",
+    "keywords": ["sms"],
+    "homepage": "https://github.com/smsup/smsuplib_php",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "ale-blanco",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.4"
+    },
+    "autoload": {
+        "psr-4": {"SmsCounterLength\\": "src/"}
+    }
+}
