@@ -1,5 +1,5 @@
 {
-    "name": "ale-blanco/SmsCounterLength",
+    "name": "ale-blanco/sms-counter-length",
     "type": "library",
     "description": "Libreria para calcular el numero de sms necesarios para enviar un texto",
     "keywords": ["sms"],

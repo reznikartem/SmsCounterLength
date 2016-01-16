@@ -4,6 +4,7 @@ namespace SmsCounterLength;
 
 use SmsCounterLength\Charset\CharsetFactory;
 use SmsCounterLength\Parts\Parts;
+use SmsCounterLength\Charset\CharsetInterface;
 
 class SmsCounter {
 
@@ -11,7 +12,11 @@ class SmsCounter {
 	{
 		$chfact = new CharsetFactory;
 		$charset = $chfact->createCharset($text);
+		return $this->getParts($charset, $text);
+	}
 
+	protected function getParts(CharsetInterface $charset, $text)
+	{
 		$parts = new Parts;
 		$parts->setCharSet($charset->getCharsetName());
 		$partsArr = $charset->splitText($text);

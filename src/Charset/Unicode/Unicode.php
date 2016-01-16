@@ -2,9 +2,9 @@
 
 namespace SmsCounterLength\Charset\Unicode;
 
-use SmsCounterLength\Charset\ICharset;
+use SmsCounterLength\Charset\CharsetInterface;
 
-class Unicode implements ICharset {
+class Unicode implements CharsetInterface {
 
 	public function getMaxLengthOne()
 	{

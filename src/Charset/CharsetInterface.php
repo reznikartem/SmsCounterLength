@@ -2,7 +2,7 @@
 
 namespace SmsCounterLength\Charset;
 
-interface ICharset {
+interface CharsetInterface {
 
 	public function getLength($text);
 	public function splitText($text);
