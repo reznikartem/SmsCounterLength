@@ -15,7 +15,7 @@ Instalacion
 Mediante composer
 
 ``` bash
-composer require smsup/smsuplib
+composer require ale-blanco/sms-counter-length
 ```
 
 Uso
