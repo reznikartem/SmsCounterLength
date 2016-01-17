@@ -9,3 +9,30 @@ Libreria php para calcular el numero de sms necesarios para enviar un texto
 
 Inspirada en https://github.com/vchatterji/gsm
 
+Instalacion
+-----------
+
+Mediante composer
+
+``` bash
+composer require smsup/smsuplib
+```
+
+Uso
+---
+
+``` php
+
+$counter = (new SmsCounter())->parse('Texto que se quiere medir la longuitud, para ver cuantos sms hacen falta para poder enviarlo. En este caso en un sms larga que se debe enviar mediante el uso de 2 mensajes, ya que tiene mas de 160 caracteres.');
+
+echo $counter->getSmsCount(); //2
+echo $counter->getCharsLeft(); //98
+echo $counter->getCharSet(); //GSM 3.38
+var_dump($counter->getParts());// array(2) {
+							   //   [0]=>
+							   //   string(153) "Texto que se quiere medir la longuitud, para ver cuantos sms hacen falta para poder enviarlo. En este caso en un sms larga que se debe enviar mediante el"
+							   //   [1]=>
+							   //   string(55) " uso de 2 mensajes, ya que tiene mas de 160 caracteres."
+							   // }
+							   
+```
