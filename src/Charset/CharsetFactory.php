@@ -10,7 +10,7 @@ class CharsetFactory {
 	public function createCharset($text)
 	{
 		$gsm = new Gsm338;
-		return ($gsm->isGsm($text)) ? new Gsm338 : new Unicode;
+		return ($gsm->isGsm($text)) ? $gsm : new Unicode;
 	}
 
 }

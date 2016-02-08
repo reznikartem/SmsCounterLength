@@ -27,8 +27,9 @@ class Gsm338 implements CharsetInterface {
 	{
 		$chars = $this->splitChars($text);
 		foreach($chars as $char){
-			if(!array_key_exists($char, $this->charset))
+			if(!isset($this->charset[$char])){
 				return false;
+			}
 		}
 		return true;
 	}
@@ -72,12 +73,7 @@ class Gsm338 implements CharsetInterface {
 
     protected function splitChars($string)
     {
-        $val = array();
-        $count = mb_strlen($string, 'UTF8');
-        for($i=0;$i<$count;$i++){
-            $val[] = mb_substr($string, $i, 1, 'UTF8');
-        }
-        return $val;
+        return preg_split('//u', $string, null, PREG_SPLIT_NO_EMPTY);
     }
     
 }
